@@ -1,15 +1,13 @@
 FROM rocker/r-ver:4.1.2
 
 ENV S6_VERSION=v2.1.0.2
-ENV DEFAULT_USER=rstudio
+ENV DEFAULT_USER=r-user
 ENV PANDOC_VERSION=default
 ENV CTAN_REPO=https://www.texlive.info/tlnet-archive/2022/03/09/tlnet
 ENV PATH=$PATH:/usr/local/texlive/bin/x86_64-linux
 ENV QUARTO_VERSION=latest
 
 # Options for setup script
-ARG INSTALL_ZSH="true"
-ARG UPGRADE_PACKAGES="true"
 ARG USERNAME=r-user
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
