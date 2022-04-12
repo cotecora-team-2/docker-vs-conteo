@@ -85,8 +85,8 @@ resultados_tbl <- bind_rows(resultados_lst)
 
 
 ```{r}
-write_rds(resultados_tbl, "resultados-nbh-5.rds")
-#resultados_tbl <- read_rds("resultado-nbh-2.rds")
+write_rds(resultados_tbl, "resultados-nbh-6.rds")
+#resultados_tbl <- read_rds("resultados-nbh-5.rds")
 #resultados_tbl <- read_rds("resultado-nbh.rds")
 #resultados_tbl<- resultados_tbl |> 
 #  mutate(num_muestra = rep(1:250, each = 3))
@@ -125,7 +125,7 @@ resultados_r_tbl <- map_dfr(seq_along(p_obs_seq), function(num){
   res <- quickcountmx::ratio_estimation(muestra,
     stratum = ID_ESTRATO, data_stratum = estratos_tbl,
     n_stratum = n,
-    parties = any_of(c("se_quede", "se_vaya", "nulo")))
+    parties = any_of(c("SE_QUEDE", "SE_VAYA", "NULO")))
   res$num_muestra <- num
   res
 })
